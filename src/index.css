@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+.linkHover {
+  cursor: pointer;
+}
+.linkNavActive {
+  font-weight: 700 !important;
+    text-decoration: underline overline !important;
+    text-decoration-color: blue;
+}
+.warning {
+  font-weight: 600;
+  text-decoration-color: red;
+}
+.header {
+  font-size: 30px;
+  font-weight: 600;
+}
