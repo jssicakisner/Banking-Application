@@ -19,6 +19,6 @@ test("user with invalid email and password", () => {
   getByDisplayValue('test');
   const button = getByRole('button');
   fireEvent.click(button);
-  getByText('password must be at least 8 characters');
-  getByText('email is not valid');
+  getByText('Password must consist of at least 8 characters');
+  getByText('Email is not valid');
 });
