@@ -7,13 +7,6 @@ const UserContext = createContext(null);
 const maxWidthDefault = "45rem";
 let contextUser = [];
 
-const validate = (field, label) => {
-    formErrors = frmValidate(formErrors,field, label);
-    setErrors(formErrors);
-    if (JSON.stringify(formErrors) === '{}') return true;
-    return false;
-}
-
 const validateLogin = (users, header) => {
   let routingNumber = authLogin(users, header);
   if (typeof routingNumber != "boolean") {
@@ -66,6 +59,12 @@ const Form = (props) => {
   
   const clearForm = (e) => {setShow(true);}
 
+const validate = (field, label) => {
+    formErrors = frmValidate(formErrors,field, label);
+    setErrors(formErrors);
+    if (JSON.stringify(formErrors) === '{}') return true;
+    return false;
+}
   
   const onChange = (e) => {
     let tmpFrmData = {...frmData};
@@ -152,5 +151,6 @@ const Form = (props) => {
     />
   )
 }
+
 
 export { UserContext, Card, Info, Form, validateLogin }
