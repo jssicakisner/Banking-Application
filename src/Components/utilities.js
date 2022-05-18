@@ -7,6 +7,13 @@ const UserContext = createContext(null);
 const maxWidthDefault = "45rem";
 let contextUser = [];
 
+const validate = (field, label) => {
+    formErrors = frmValidate(formErrors,field, label);
+    setErrors(formErrors);
+    if (JSON.stringify(formErrors) === '{}') return true;
+    return false;
+}
+
 const validateLogin = (users, header) => {
   let routingNumber = authLogin(users, header);
   if (typeof routingNumber != "boolean") {
@@ -15,21 +22,6 @@ const validateLogin = (users, header) => {
   }
   return routingNumber;
 };
-
-const Card = (props) => {
-  const {bgcolor, txtcolor, headerbgcolor, headertxtcolor, header, title, text, body, status, maxWidth} = props;
-  return (
-    <div className={cardClass(bgcolor, txtcolor)} class="card border-success mb-3" style={{margin: "4em", maxWidth: maxWidth ? maxWidth : maxWidthDefault}}>
-    <div className={headerClass(headerbgcolor, headertxtcolor, bgcolor, txtcolor)}>{header}</div>
-    <div className="card-body"> 
-        {title && (<h5 className="card-title" class="card text-center">{title}</h5>)}
-        {text && (<p className="card-text">{text}</p>)} {body}
-        {status && (<div className="text-danger warning">{status}</div>)}
-    </div>
-    </div>
-    
-  );
-}
 
 const Info = (props) => {
   const {header, title, text, body, maxWidth} = props;
@@ -47,6 +39,21 @@ const Info = (props) => {
   )
 }
 
+const Card = (props) => {
+  const {bgcolor, txtcolor, headerbgcolor, headertxtcolor, header, title, text, body, status, maxWidth} = props;
+  return (
+    <div className={cardClass(bgcolor, txtcolor)} class="card border-success mb-3" style={{margin: "4em", maxWidth: maxWidth ? maxWidth : maxWidthDefault}}>
+    <div className={headerClass(headerbgcolor, headertxtcolor, bgcolor, txtcolor)}>{header}</div>
+    <div className="card-body"> 
+        {title && (<h5 className="card-title" class="card text-center">{title}</h5>)}
+        {text && (<p className="card-text">{text}</p>)} {body}
+        {status && (<div className="text-danger warning">{status}</div>)}
+    </div>
+    </div>
+    
+  );
+}
+
 const Form = (props) => {
   const {header, submit, success, elems} = props;
   const [frmInput, setFrmInputs] = useState([]);
@@ -59,12 +66,7 @@ const Form = (props) => {
   
   const clearForm = (e) => {setShow(true);}
 
-  const validate = (field, label) => {
-    formErrors = frmValidate(formErrors,field, label);
-    setErrors(formErrors);
-    if (JSON.stringify(formErrors) === '{}') return true;
-    return false;
-  }
+  
   const onChange = (e) => {
     let tmpFrmData = {...frmData};
     let routingNumber = frmOnChange(e, frmInput, tmpFrmData);
