@@ -12,19 +12,6 @@ const authLogin = (users, header, UserContext) => {
     return true;
 }
 
-const frmOnChange = (e, frmImput, tmpFrmData) => {
-    let tmpSubmit = false;
-    tmpFrmData[e.target.name] = e.target.value;
-    frmImput.map((frmImput) => {
-      if (tmpFrmData[frmImput] === undefined) {
-          tmpSubmit = true;
-      } else {
-        if (tmpFrmData[frmImput].length <= 0) tmpSubmit = true;
-      }
-    });
-    return tmpSubmit;
-}
-
 const frmValidate = (formErrors, field, label) => {
     let error = {};
     if (field !== undefined) {
@@ -51,5 +38,19 @@ const frmValidate = (formErrors, field, label) => {
     formErrors = {...formErrors, ...error};
     return formErrors;
 }
+
+const frmOnChange = (e, frmImput, tmpFrmData) => {
+    let tmpSubmit = false;
+    tmpFrmData[e.target.name] = e.target.value;
+    frmImput.map((frmImput) => {
+      if (tmpFrmData[frmImput] === undefined) {
+          tmpSubmit = true;
+      } else {
+        if (tmpFrmData[frmImput].length <= 0) tmpSubmit = true;
+      }
+    });
+    return tmpSubmit;
+}
+
 
 export { authLogin, frmValidate, frmOnChange }
