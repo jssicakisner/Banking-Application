@@ -15,7 +15,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run, 'npm start' to run the app in the development mode opening [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Roadmap of Future Improvements 
+## Roadmap of Future Improvements
 
 * Build the back-end to store the users data.
 * Add helper text, autocomplete to the forms.
