@@ -1,13 +1,15 @@
 # BANKING APPLICATION ASSIGNMENT
 This is a simple front-end Banking application designed as part of the MIT Full Stack Development course. The website is deployed on Amazon Web services on the following [url](https://jessica-kisnerbankingapplication.s3.amazonaws.com/index.html)
 
+<img src="./badbank.png" />
+
 ## Technologies Used
 
 * _HTML_
 * _JavaScript_
 * _CSS_
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
